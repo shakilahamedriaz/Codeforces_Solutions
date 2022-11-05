@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    int a,b=0;
+    int a;
+	int b=0;
     cin>>a;
 
     string s;
