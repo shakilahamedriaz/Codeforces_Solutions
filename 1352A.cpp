@@ -28,11 +28,10 @@ while(t--){
         p*=10;
     }
          cout << a.size() << endl;
-		for (auto number : a) cout << number << " ";
+		for (auto number :a) cout << number << " ";
 		cout << endl;
 
 }
-
 
 
 return 0;
