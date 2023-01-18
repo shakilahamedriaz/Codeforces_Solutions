@@ -1,21 +1,63 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-int main(){
+int main()
+{
+    int t;
+    cin>>t;
 
-int t;
-char a[25],b[25];
-for(int i=0; i<t; i++){
-
-    gets(a);
-    gets(b);
-
-}
-
-
-//             Pari naaaaaaa
+    while (t--)
+    {
+        string str, str2;
+        cin>>str>>str2;
 
 
+        int len = str.length();
+        int len2 = str2.length();
 
-return 0;
+
+        if(str == str2){
+            cout<<"="<<endl;
+        }
+        else if(str[len-1] == 'S' && str2[len2-1] == 'M'){
+            cout<<"<"<<endl;
+        }
+        else if(str[len-1] == 'M' && str2[len2-1] == 'S'){
+            cout<<">"<<endl;
+        }
+        else if(str[len-1] == 'S' && str2[len2-1] == 'L'){
+            cout<<"<"<<endl;
+        }
+        else if(str[len-1] == 'L' && str2[len2-1] == 'S'){
+            cout<<">"<<endl;
+        }
+        else if(str[len-1] == 'M' && str2[len2-1] == 'L'){
+            cout<<"<"<<endl;
+        }
+        else if(str[len-1] == 'L' && str2[len2-1] == 'M'){
+            cout<<">"<<endl;
+        }
+        else if(str[len-1] == str2[len2-1] ){
+
+            if(str[len-1] == 'L'){
+                if(len < len2){
+                    cout<<"<"<<endl;
+                }
+                else cout<<">"<<endl;
+            }
+
+            if(str[len-1] == 'S'){
+                if(len < len2){
+                    cout<<">"<<endl;
+                }
+                else cout<<"<"<<endl;
+            }
+        }
+
+
+    }
+
+
+    return 0;
 }
