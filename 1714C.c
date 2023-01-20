@@ -5,7 +5,7 @@ int x;
 scanf("%d",&x);
 long long n[11];
 int s=9; int i=0;
-while(x)
+while(x--)
 {
     if(x>=s)
     {
