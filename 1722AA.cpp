@@ -15,8 +15,6 @@ while(t--){
 
     if(n!=5){
 
-
-
         cout<< "NO"<<endl;
         continue;
     }
