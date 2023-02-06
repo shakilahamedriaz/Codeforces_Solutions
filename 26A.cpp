@@ -20,6 +20,7 @@ int main()
         if (pfactors[i] == 2)
         {
             amount += 1;
+            
         }
     }
     printf("%d\n", amount);
