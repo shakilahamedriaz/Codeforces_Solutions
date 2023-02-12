@@ -16,6 +16,8 @@ int main(int argc, char const *argv[])
     if(s1==s2){
         cout<< "YES"<<endl;
     }
+
+    
     else{
 
         cout<<"NO"<<endl;
