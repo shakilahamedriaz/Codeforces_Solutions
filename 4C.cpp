@@ -10,15 +10,16 @@ int main(){
    string s;
    for(int i=0; i<n; i++){
     cin>>s;
-    if(m[s]=0){
-        cout<<"OK";
+        int prev=m[s];
         m[s]++;
-        
-    }
-    else{
-        cout<<s<<m[s];
-        m[s]++;
-    }
+
+        if(prev==0){
+            cout<< "OK"<<endl;
+
+        }
+        else{
+            cout<<s<<prev<<endl;
+        }
    }  
 
 
