@@ -1,0 +1,1 @@
+{"name":"Local: 1294CC","url":"e:\\Competative Progtamming\\Codeforces__Solutions\\1294CC.cpp","tests":[{"id":1683557236398,"input":"5\n64\n32\n97\n2\n12345\n","output":"YES\n2 4 8 \nNO\nNO\nNO\nYES\n3 5 823 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Competative Progtamming\\Codeforces__Solutions\\1294CC.cpp","group":"local","local":true}
