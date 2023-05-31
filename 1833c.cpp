@@ -16,7 +16,7 @@ string isBeautifulArray(const vector<int>& a) {
     if (evenCount > 0 && oddCount > 0)
         return "NO";
 
-    return "YES";
+    return "YES"; //uhuu
 }
 
 int main() {
