@@ -8,7 +8,7 @@ void printans(int x, int k)
         cout<<1<<endl;
         cout<<x<<endl;
 
-        continue ;
+        return;
     }
 
     cout<<2<<endl;
