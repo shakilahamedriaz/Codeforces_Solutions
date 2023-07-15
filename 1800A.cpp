@@ -21,7 +21,7 @@ int main()
         if(s[i]<=90) s[i]=s[i]+32;
     
        }
-       string newstr;
+       string newstr="";
 
        for(int i=0; i<n; i++)
        {
