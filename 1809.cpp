@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+    
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
@@ -16,8 +17,8 @@ int main()
         cin >> s;
         int n = 4;
 
-        set<char> sc;
-        map<char, int> freq;
+        set<char> sc;   //for unique
+        map<char, int> freq;  // char - value
 
         for (auto i : s)
         {

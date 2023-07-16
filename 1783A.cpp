@@ -1,45 +1,34 @@
 #include<bits/stdc++.h>
-#include<array>
 using namespace std;
-#define ll long long
+
+void ans(int n)
+{
+    int arr[n+4];
+    for(int i=0; i<n; i++) cin >> arr[i];
+
+    if(arr[0]==arr[n-1]) cout<< "NO" <<endl;
+    else{
+
+        cout<< "YES" << endl;
+        cout<< arr[0]<< " ";
+
+        for(int i=n-1; i>0; i--) cout<<arr[i]<< " ";
+        
+        cout<<endl;
+    }
+}
+
 int main()
 {
 
      int t;
-     cin>>t;
+     cin >> t;
      while(t--)
      {
-         int n;
-         cin>>n;
-         ll arr[n];
-
-         for(ll i=1; i<=n; i++){
-
-            cin>>arr[i];
-         }
-
-         if(arr[1]==arr[n]){
-            cout<< "NO"<<endl;
-            return 0;
-         }
-
-         else{
-         cout<< "YES"<<endl;
-         cout<<arr[n]<< " ";
-
-         for(ll i=1; i<=n-1; i++)
-         {
-             cout<< arr[i]<< " ";
-         }
-
-         cout<< endl;
-         }
+        int n;
+        cin >> n;
+        ans(n);
      }
-
-
-
-
-
 
     return 0;
 }
