@@ -25,6 +25,8 @@ int main()
         if(brr[i]==0) a2++;
         else b2++;
     }
+
+    
      int ans1= 0, ans2=0;
 
      for(int i=0; i<n; i++)
