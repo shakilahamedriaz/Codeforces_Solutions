@@ -1,37 +1,35 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
 int main() {
     int t;
     cin >> t;
-
+    
     while (t--) {
-        int n;
+        int n, sum, y;
         cin >> n;
-
-        int total_elements = n * (n - 1) / 2;
-        vector<int> b(total_elements);
-
-        for (int i = 0; i < total_elements; ++i) {
+        
+        int x = (n * (n - 1)) / 2;
+        int a[n], b[x];
+        y = n - 1;
+        sum = y;
+        
+        for (int i = 0; i < x; i++) {
             cin >> b[i];
         }
-
-        sort(b.begin(), b.end());
-
-        vector<int> a(n);
-        a[0] = b[0];
-
-        for (int i = 0; i < n; ++i) {
-            a[i] = b[i * (i + 1) / 2];
+        
+        sort(b, b + x);
+        
+        for (int i = 0; i < n - 1; i++) {
+            cout << b[sum - 1] << " ";
+            y--;
+            sum += y;
         }
-
-
-
-        for (int i = 0; i < n; ++i) {
-            cout << a[i] << " ";
-        }
-        cout << endl;
+        
+        cout << b[x - 1] << endl;
     }
-
+    
     return 0;
 }
