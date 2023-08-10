@@ -22,8 +22,10 @@ int main() {
         a[0] = b[0];
 
         for (int i = 0; i < n; ++i) {
-            a[i] = b[i + (i + 1) / 2];
+            a[i] = b[i * (i + 1) / 2];
         }
+
+
 
         for (int i = 0; i < n; ++i) {
             cout << a[i] << " ";
