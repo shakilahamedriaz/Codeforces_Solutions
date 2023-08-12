@@ -14,6 +14,7 @@ int main() {
             cout << "0\n";
         } else {
             int l = s.length();
+            //comment
             int count = 0;
             for (int i = 1; i < l; i++) {
                 if (s[i] == '?') {
