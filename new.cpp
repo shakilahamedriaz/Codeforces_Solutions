@@ -4,10 +4,10 @@ using namespace std;
 void solve()
 {
     //97-122
-    // string s;
-    // cin>>s;
-    // for(char a=97; i<)
-    cout<<char(109);
+    string s;
+    cin>>s;
+    for(char a=97; i<)
+
     
 }
 
