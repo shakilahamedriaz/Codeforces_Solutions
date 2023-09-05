@@ -14,7 +14,7 @@ int main()
         int dis2 = abs(26 - dis1);  //counterclockwise
 
         int min_dis = min(dis1, dis2);
-        cnt += min_dis;  // Add the minimum distance to the count
+        cnt += min_dis;  // min distance for cnt
 
         current = s[i];  // Set the current letter to the next character
     }
