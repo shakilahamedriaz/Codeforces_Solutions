@@ -1,29 +1,31 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include <cmath>
+
 using namespace std;
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
+    int arr[n], arr2[n];
 
-    int h[n];
-    for (int i = 0; i < n; ++i)
-        cin >> h[i];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        arr2[i] = arr[i];
+    }
 
-    int start = 1, end = 2, min_diff = abs(h[0] - h[1]);
+    int min_index = 1, min_index2 = n;
+    int min_diff = abs(arr[0] - arr[n - 1]);
 
-    for (int i = 1; i < n; ++i)
-    {
-        int diff = abs(h[i] - h[(i + 1) % n]);
-        if (diff < min_diff)
-        {
-            min_diff = diff;
-            start = i + 1;
-            end = (i + 2) % n + 1;
+    for (int i = 0; i < n - 1; i++) {
+        int current_diff = abs(arr[i] - arr[i + 1]);
+        if (current_diff < min_diff) {
+            min_diff = current_diff;
+            min_index = i + 1;
+            min_index2 = i + 2;
         }
     }
 
-    cout << start << " " << end << endl;
+    cout << min_index << " " << min_index2 << endl;
+
     return 0;
 }
