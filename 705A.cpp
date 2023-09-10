@@ -2,22 +2,13 @@
 using namespace std;
 
 int main(){
-
-int n;
-cin>>n;
-
-if(n==1){
-    cout<< "I hate it"<<endl;
+int n; cin>>n;
+string uhuu= "I hate";
+for(int i=2; i<=n; i++)
+{
+    if(i%2==0) uhuu+= " that I love";
+    else  uhuu+=" that I hate";
 }
-else if(n==2){
-
-    cout<< "I hate that I love it"<<endl;
-}
-else if(n==3){
-
-    cout<< "I hate that I love that I hate it"<<endl;
-}
-
-
+cout<<uhuu<< " it" <<endl;
 return 0;
 }
