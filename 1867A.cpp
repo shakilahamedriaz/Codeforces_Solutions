@@ -19,9 +19,9 @@ int main()
         else if(n==2) cout<< "2 1"<<endl;
         else{
             
-            for(int i=n-1; i>=0; i++)
+            for(int i=n; i>=1; i--)
             {
-                 cout<<i<<endl;
+                 cout<<i<< " ";
             }
         }
     }
