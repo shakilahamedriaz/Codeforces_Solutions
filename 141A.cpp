@@ -1,35 +1,20 @@
-#include <iostream>
-#include <string>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-  string guest, host, pile;
-  cin >> guest >> host >> pile;
+int main()
+{
+  string s1,s2,s3;
+  cin >>s1 >>s2 >>s3;
+  string s4=s1+s2;
 
-  int guest_count[26] = {0}, host_count[26] = {0}, pile_count[26] = {0};
+  sort(s3.begin(), s3.end());
+  sort(s4.begin(), s4.end());
 
-  // Count the frequency of each letter in the guest and host names
-  for (int i = 0; i < guest.length(); i++) {
-    guest_count[guest[i] - 'A']++;
-  }
-  for (int i = 0; i < host.length(); i++) {
-    host_count[host[i] - 'A']++;
-  }
+  cout<<s3<<endl;
+  cout<<s4<<endl;
 
-  // Count the frequency of each letter in the pile of letters
-  for (int i = 0; i < pile.length(); i++) {
-    pile_count[pile[i] - 'A']++;
-  }
+  if(s3==s4) cout<< "YES" <<endl;
+  else cout<< "NO" <<endl;
 
-  // Check if the frequency of each letter in the pile matches the frequency in the names
-  for (int i = 0; i < 26; i++) {
-    if (pile_count[i] != guest_count[i] + host_count[i]) {
-      cout << "NO" << endl;
-      return 0;
-    }
-  }
-
-  cout << "YES" << endl;
   return 0;
 }
