@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -7,22 +7,23 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        int a[n];
+        long long  a[n],oddcnt=0,evencnt=0;
         for (int i = 0; i < n; i++) {
             cin >> a[i];
-        }
-        int counter = 0;
-        for (int i = 0; i < n-1; i++) {
-            if ((a[i] + a[i+1]) % 2 == 1) {
-                counter++;
-                for (int j = i+1; j < n-1; j++) {
-                    a[j] = a[j+1];
-                }
-                n--;
-                i--;
+            if(a[i]%2==0)
+            {
+                evencnt++;
+            }
+            else
+            {
+                oddcnt++;
             }
         }
-        cout << counter << endl;
+        
+        else if(oddcnt<evencnt) cout<<oddcnt<<endl;
+        else cout<<evencnt<<endl;
+        
+       
     }
     return 0;
 }
