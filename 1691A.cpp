@@ -20,7 +20,7 @@ int main() {
             }
         }
         
-        else if(oddcnt<evencnt) cout<<oddcnt<<endl;
+        if(oddcnt<evencnt) cout<<oddcnt<<endl;
         else cout<<evencnt<<endl;
         
        
