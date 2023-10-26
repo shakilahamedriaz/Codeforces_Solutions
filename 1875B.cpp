@@ -1,15 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ll long long
 
 int main() {
-    int t;
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    ll t;
     cin >> t;
 
     while (t--) {
-        int n, m, k;
+        ll n, m, k;
         cin >> n >> m >> k;
-        vector<int> a(n);
-        vector<int> b(m);
+        vector<ll> a(n);
+        vector<ll> b(m);
 
         for (int i = 0; i < n; i++) {
             cin >> a[i];
@@ -18,10 +23,10 @@ int main() {
         for (int i = 0; i < m; i++) {
             cin >> b[i];
         }
-
+        ll sum=0;
         sort(a.begin(), a.end());
         sort(b.begin(), b.end());
-
+        //for even case
         if(k%2==0)
         {
             if(a[0]<b[m-1])
@@ -30,7 +35,7 @@ int main() {
                 sort(a.begin(), a.end());
                 sort(b.begin(), b.end());
             }
-            if(a[0]>b[m-1])
+            if(b[0]<a[n-1])
             {
                 swap(a[n-1], b[0]);
                 sort(a.begin(), a.end());
@@ -48,7 +53,7 @@ int main() {
             }
         }
 
-        long long sum=0;
+       
         for(auto it: a)
         {
             sum+=it;
