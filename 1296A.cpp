@@ -29,11 +29,15 @@ void sol_shakil()
     }
     else
     {
-        if(evenCnt>=1 && oddCnt>=1)
+        if(oddCnt>=1 && evenCnt>=1)
         {
             cout<< "YES" <<endl;
         }
-        cout<< "NO" <<endl;
+        else
+        {
+              cout<< "NO" <<endl;
+        }
+     
     }
 
 }
