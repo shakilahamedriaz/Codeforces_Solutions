@@ -1,23 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+int sr_sol(int n, vector<int>&arr)
 {
-    int n,a,cnt=0;
-    cin>>n;
+    if(n==1) return 1;
+    int maxi=0;
 
     for(int i=0; i<n; i++)
+    {   int cnt=0;
+        for(int j=0; j<n; j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                cnt ++;
+            }
+        }
+        maxi=max(maxi, cnt);
+        cnt=0;
+    }
+    return maxi;
+
+}
+int main()
+{
+    int n;
+    cin >>n;
+    vector<int>arr(n);
+    for(int i=0; i<n; i++)
     {
-        cin>>a;
+        cin >>arr[i];
+    }
+    
+    int ans=sr_sol(n, arr);
+    cout<<ans<<endl;
 
-         if(1+i == a){
-
-            cnt++;
-         }
-
-         }
-
-    cout<<cnt;
     return 0;
-
 }
