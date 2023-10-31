@@ -5,7 +5,7 @@ void sr_sol(int n)
 {
     while(n--)
     {
-        cout<< "7" << " ";
+        cout<< "7" << " ";  //print any number 
     }
     cout<<endl;
 }
