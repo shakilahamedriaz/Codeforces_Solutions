@@ -31,10 +31,13 @@ int main() {
         }
 
         int min_path = 0;
-        for (int i = 0; i < 2*n; i++) {
+        for (int i = 0; i < n-1; i++) {
             min_path += abs(points[i].first - points[i+1].first) + abs(points[i].second - points[i+1].second);
         }
-
+        
+       // min_path= min_path-( points[n-1].first + points[n-1].second );
+       //by using n-1 we can reduce the extra it.
+       
         cout << min_path << endl;
         for (const auto& point : points) {
             cout << point.first << " " << point.second << endl;
