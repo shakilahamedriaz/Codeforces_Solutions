@@ -26,14 +26,10 @@ int main()
                 firstHalf.push_back(s[i]);
             }
 
-
-
             for(int i = len / 2; i < len; i++)
             {
                 scndHalf.push_back(s[i]);
             }
-
-
 
             if(firstHalf == scndHalf)
                 cout << "YES" << endl;
