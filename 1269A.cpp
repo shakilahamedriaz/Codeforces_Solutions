@@ -16,6 +16,7 @@ int main()
     {
          
          cout << n+9 << " " << 9 << endl;
+         
     }
     return 0;
 }
