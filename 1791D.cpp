@@ -12,47 +12,32 @@ int main()
         cin >> n;
         string s;
         cin >> s;
-
-        map<char, int> mpcnt;
-        set<char> take;
+        
+        vector<int> pref(n, 0), suff(n, 0);
+        set<char> st;
 
         for (int i = 0; i < n; i++)
         {
-            mpcnt[s[i]]++;
+            st.insert(s[i]);
+            pref[i] = st.size();
         }
 
-        bool ok = false;
-        for (auto it : mpcnt)
+        st.clear();
+
+        for (int i = n - 1; i >= 0; i--) // Corrected line
         {
-            if (it.second == 2) 
-            {
-                ok = true;
-                break;
-            }
-            else if(it.second==3)
-            {
-                cout<< "3"<<endl;
-                return 0;
-            }
-
+            st.insert(s[i]);
+            suff[i] = st.size();
         }
 
-        if (!ok)
+        int ans = 0;
+
+        for (int i = 0; i < n - 1; i++)
         {
-            cout << "2" << '\n';
+            ans = max(ans, pref[i] + suff[i + 1]); // Corrected line
         }
-        else
-        {
-            for (int i = 0; i < n; i++)
-            {
-                take.insert(s[i]);
-            }
 
-            int setlen = take.size();
-            int total = setlen + (n - setlen);
-
-            cout << total << endl;
-        }
+        cout << ans << endl;
     }
 
     return 0;
