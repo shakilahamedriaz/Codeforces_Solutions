@@ -1,36 +1,46 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
+int maxAlternatingSubarraySum(int arr[], int n)
+{
+    int maxSum = arr[0];
+    int currentSum = arr[0];
+
+    for(int i = 1; i < n; i++)
+    {
+        if ((arr[i] % 2 == 0 && arr[i - 1] % 2 == 0) || (arr[i] % 2 != 0 && arr[i - 1] % 2 != 0))
+        {
+            currentSum = max(arr[i], currentSum + arr[i]);
+        }
+        else
+        {
+            currentSum = arr[i];
+        }
+
+        maxSum = max(maxSum, currentSum);
+    }
+
+    return maxSum;
+}
+
+int main()
+{
     int t;
     cin >> t;
-
-    while (t--) {
+    
+    while(t--)
+    {
         int n;
         cin >> n;
+        int arr[n];
 
-        vector<long long> weights(n);
-        for (int i = 0; i < n; ++i) {
-            cin >> weights[i];
+        for(int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
         }
 
-        long long answer = 0;
-
-        for (int i = 1; i * i <= n; ++i) {
-            if (n % i == 0) {
-                long long maxWeight = *max_element(weights.begin(), weights.begin() + i);
-                long long minWeight = *min_element(weights.begin() + n - i, weights.end());
-                answer = max(answer, maxWeight - minWeight);
-
-                if (i != n / i) {
-                    maxWeight = *max_element(weights.begin(), weights.begin() + n / i);
-                    minWeight = *min_element(weights.begin() + i, weights.end());
-                    answer = max(answer, maxWeight - minWeight);
-                }
-            }
-        }
-
-        cout << answer << endl;
+        int maxSum = maxAlternatingSubarraySum(arr, n);
+        cout << maxSum << endl;
     }
 
     return 0;
