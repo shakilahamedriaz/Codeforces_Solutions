@@ -1,41 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-void sr_sol(int n, int P, int l, int t) {
-    int ans = 0;
-    int i = 1;
-    while (i <= n) {
-        int j = 1;
-        while (j <= n) {
-            int k = 1;
-            while (k <= n) {
-                int temp = (i + j + k);
-                if (temp == P) {
-                    ans++;
-                }
-                k++;
-            }
-            j++;
-        }
-        i++;
-    }
-
-    if (ans >= l && ans <= t) {
-        cout << "YES" << endl;
-    } else {
-        cout << "NO" << endl;
-    }
+bool is_possible(ll totalTask, ll p, ll l, ll t, ll mid)
+{
+    ll ans = min(totalTask, 2 * mid) * t;
+    ans += l * mid;
+    return ans >= p;
 }
 
-int main() {
-    int tc;
+void sr_sol()
+{
+    ll n, p, l, t;
+    cin >> n >> p >> l >> t;
+
+    ll totalTask = (n + 6) / 7;
+
+    ll low = 1, high = n;
+    ll mid;
+    while (low < high)
+    {
+        mid = (low + high) / 2;
+        if (is_possible(totalTask, p, l, t, mid))
+        {
+            high = mid;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+
+    cout << n - high << endl;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll tc;
     cin >> tc;
 
-    while (tc--) {
-        int n, P, l, t;
-        cin >> n >> P >> l >> t;
-
-        sr_sol(n, P, l, t);
+    while (tc--)
+    {
+        sr_sol();
     }
 
     return 0;
